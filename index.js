@@ -61,19 +61,23 @@ function renderAds(filteredList) {
     image.src = ad.image;
 
     const contact = document.createElement("p");
-    contact.textContent = "***";
+    contact.textContent = "Contacts: ***";
 
     const button = document.createElement("button");
     button.className = "btn btn-primary";
     button.textContent = "Show Contact info";
     button.addEventListener("click", (e) => {
-        if(contact.textContent == "***") {
+        alert(ad.contact)
+
+        /*if(contact.textContent == "***") {
             contact.textContent = ad.contact;
             button.textContent = "Hide Contact info"
         } else {
             contact.textContent = "***";
             button.textContent = "Show Contact info"
-        }
+        }   */
+            // I misredd the file so i implemented a version
+            // were the contact info shows and hides on the button click
         
     })
     // todo: set button on the bottom of div
