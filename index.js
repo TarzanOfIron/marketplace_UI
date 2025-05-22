@@ -46,7 +46,7 @@ function renderAds(filteredList) {
 
   filteredList.forEach(ad => {
     const cardWrapper = document.createElement("div");
-    cardWrapper.className = "col-6 col-md-4 col-lg-3"
+    cardWrapper.className = "col-6 col-md-4 col-lg-3 d-flex"
 
     const card = document.createElement("div");
     card.className = "card border-0 ";
@@ -64,7 +64,7 @@ function renderAds(filteredList) {
     contact.textContent = "Contacts: ***";
 
     const button = document.createElement("button");
-    button.className = "btn btn-primary";
+    button.className = "btn btn-primary mt-auto";
     button.textContent = "Show Contact info";
     button.addEventListener("click", (e) => {
         alert(ad.contact)
