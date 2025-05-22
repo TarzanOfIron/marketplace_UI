@@ -61,12 +61,31 @@ function renderAds(filteredList) {
     image.src = ad.image;
 
     const contact = document.createElement("p");
-    contact.textContent = ad.contact;
+    contact.textContent = "***";
+
+    const button = document.createElement("button");
+    button.className = "btn btn-primary";
+    button.textContent = "Show Contact info";
+    button.addEventListener("click", (e) => {
+        if(contact.textContent == "***") {
+            contact.textContent = ad.contact;
+            button.textContent = "Hide Contact info"
+        } else {
+            contact.textContent = "***";
+            button.textContent = "Show Contact info"
+        }
+        
+    })
+    // todo: set button on the bottom of div
+
+    
+    
 
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(description);
     card.appendChild(contact);
+    card.appendChild(button)
     cardWrapper.appendChild(card);
 
     container.appendChild(cardWrapper);
@@ -91,41 +110,3 @@ searchInput.addEventListener("input", (e) => {
 
 
 
-/*
-let filteredList = [];
-searchInput.addEventListener("input", (e) => {
-  const value = e.target.value;
-  ads.forEach((ad) => {
-    const inVisable = ad.title.includes(value);
-    ad.element.classList.toggle("hide", !inVisable);
-  });
-});
-
-
-ads.forEach((ad) => {
-  filteredAds = data.map((ad) => {
-    const card = document.createElement("div");
-    card.className = "card col-6 col-md-4 col-lg-3 border-0";
-
-    const title = document.createElement("h3");
-    title.textContent = filteredAds.title;
-
-    const description = document.createElement("p");
-    description.textContent = filteredAds.description;
-
-    const image = document.createElement("img");
-    image.src = filteredAds.image;
-
-    const contact = document.createElement("p");
-    contact.textContent = filteredAds.contact;
-
-    card.appendChild(image);
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(contact);
-
-    container.appendChild(card);
-  });
-});
-
-*/
